@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Button = () => {
-    return (<div className="db">
-        <button >
+const Button = ({onButClick}) => {
+    return (<div className='db'>
+        <button onClick={onButClick}>
         Add Task
         </button>
     </div>
