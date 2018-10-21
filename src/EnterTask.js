@@ -1,9 +1,9 @@
 import React from 'react';
 
-const EnterTask = () =>{
+const EnterTask = ({searchfield}) =>{
+    
 return (<div className="pa2 db">
 <input classname="pa3 ba b--green bg-lightest-blue"  type="" placeholder="Enter Task Here " />
-
 </div>)
 
 }
