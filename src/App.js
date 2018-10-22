@@ -9,14 +9,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      tasks: [14,43],
-      searchfield:''
+      tasks: []
+      
     }
   }
   onButtonClick =(event) => {
 
-    const xy = this.setState ({searchfield:event.target.value});
-    console.log({xy});
+    //const xy = this.setState ({searchfield:event.target.value});
+    
+    this.setState({tasks:this.state.tasks.push('18')})
+    console.log(this.setState({tasks:this.state.tasks.push(18)}));
   }
 
   render() {
