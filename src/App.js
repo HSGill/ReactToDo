@@ -3,29 +3,33 @@ import EnterTask from './EnterTask';
 import './App.css';
 
 import CardList from './CardList';
-
 import 'tachyons';
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      tasks: [14,16],
+      tasks: [],
       searchfield: ''
   
     }
   }
-  onButtonClick =(event) => {
+  onSearchChange = (event) =>{
+      this.setState({ searchfield: event.target.value });
+     const joined = this.state.tasks.concat(event.target.value);
+     this.setState({tasks:joined});
+  }
+  onButtonClick =() => {
+console.log ("working");
 
-    //const xy = this.setState ({searchfield:event.target.value});
-    //const taskList  = this.state.tasks.concat('18');
-   // console.log(taskList);
   }
 
   render() {
+    
     return (
+   
       <div className="tc ">
         <h1 className="f1 bg-green">To Do App</h1>
-        <EnterTask searchfield={this.state.searchfield}  />
+        <EnterTask searchChange={this.onSearchChange}  />
         <button onClick={this.onButtonClick.bind(this)}>
         Add Task
         </button>
