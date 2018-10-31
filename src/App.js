@@ -30,9 +30,7 @@ console.log ("working");
       <div className="tc ">
         <h1 className="f1 bg-green">To Do App</h1>
         <EnterTask searchChange={this.onSearchChange}  />
-        <button onClick={this.onButtonClick.bind(this)}>
-        Add Task
-        </button>
+        
         <CardList tasks ={this.state.tasks}/>
       </div>
     );
