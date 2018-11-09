@@ -9,18 +9,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      tasks: [],
-      searchfield: ''
+      searchfield: '',
+      tasks: []
+      
   
     }
   }
   onSearchChange = (event) =>{
-      this.setState({ searchfield: event.target.value });
-     const joined = this.state.tasks.concat(event.target.value);
-     this.setState({tasks:joined});
+       this.setState({ searchfield: event.target.value });
+  }
+  onSubmit = () =>{
+    this.setState({tasks:this.state.searchfield});
   }
   
-  onButtonClick =() => {
+onButtonClick =() => {
 console.log ("working");
 
   }
@@ -32,7 +34,7 @@ console.log ("working");
         <h1 className="f1 bg-green">To Do App</h1>
         <EnterTask searchChange={this.onSearchChange}  />
         
-        <CardList />
+        <CardList tasks={this.onSubmit}  />
       </div>
     );
   }

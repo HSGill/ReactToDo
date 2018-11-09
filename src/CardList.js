@@ -3,7 +3,7 @@ import Card from './Card';
 const CardList = ({tasks}) => {
     return (  <div>
     
-      <Card  name  />
+      <Card name = {tasks[0]} />
    
     </div>
     );
