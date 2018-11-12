@@ -17,8 +17,7 @@ class App extends Component {
        this.setState({ input: event.target.value });
   }
   onSubmit = (event) =>{
-     this.state.tasks.push(event.target.value);
-     
+     this.state.tasks.push(this.state.input);
   }
   render() {
     return (
