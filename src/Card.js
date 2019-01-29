@@ -1,12 +1,17 @@
 import React from 'react';
-
-const Card =({name}) => {
-return (
-<div className= 'center'>
-<div className='form center  pa4 br3 shadow-5'>
-{name}</div>
+import './Card.css'
+const CARD = ({addtask})=> {
+    return (
+       <div> 
+       <div className="pa3 pa5-ns">
+  <ul className="list pl0 measure center">
+    <li className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">{addtask}</li>
+  </ul>
 </div>
+
+       
+       </div>
     )
 }
-export default Card;
-//ba .br-pill .shaodw-1 f4 bg-near-white br3 br--top black-60 ma2 mv0 pv2 ph3
+
+export default CARD;
