@@ -5,10 +5,10 @@ const Search = ({onInputChange, onSubmitTask})=> {
         <div className='pa2'>
         <input className='pa3 ba b--green bg-lightest-blue' type= "search" onChange= {onInputChange}/>
        <div className="ph3">
-  <a className="f6 link dim br3 ph3 pv2 mb2 dib white bg-dark-green" href="#0" onClick= {onSubmitTask}>Add Task</a>
+  <button className="f6 link dim br3 ph3 pv2 mb2 dib white bg-dark-green"  onClick= {onSubmitTask}>Add Task </button>
 </div>
        </div>
     )
 }
-
+ 
 export default Search;
