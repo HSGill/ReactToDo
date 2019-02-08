@@ -46,6 +46,13 @@ loadUser = (data) =>{
     }
     else {
     this.state.addtask.push(this.state.searchfield);
+    fetch('http://localhost:3000/add',{
+      method:'put',
+      headers:{'content-Type':'application/json'},
+      body:JSON.stringify({
+        todoList:this.state.addtask
+      })
+    })
   }
     //this.setState.searchfield ='';
     // console.log(this.state.searchfield);
@@ -68,14 +75,14 @@ loadUser = (data) =>{
          ?
         <div>
         <Search onInputChange={this.onInputChange} onSubmitTask={this.onSubmitTask} />
-        <CARD addtask={this.state.addtask} />
+        { <CARD addtask={this.state.addtask} /> }
         </div>
         :
         (
           this.state.route==='signin'
         
         ?<Signin onRouteChange = {this.onRouteChange} />
-         :<SignUp loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+         :<SignUp  />
         )
         }
       </div>
