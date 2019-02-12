@@ -40,7 +40,8 @@ loadUser = (data) =>{
     //console.log(event.target.value);
 
   }
-  onSubmitTask = () => {
+  onSubmitTask = (e) => {
+    e.preventDefault();
     if(this.state.searchfield===''){
       alert('Please add a task ');
     }
@@ -51,10 +52,12 @@ loadUser = (data) =>{
       headers:{'content-Type':'application/json'},
       body:JSON.stringify({
         todoList:this.state.addtask
-      })
+      })   
     })
+
+    this.setState({searchfield : ' '});
+
   }
-    //this.setState.searchfield ='';
     // console.log(this.state.searchfield);
   }
 
